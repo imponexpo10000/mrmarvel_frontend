@@ -46,6 +46,7 @@ import StripePayment from "./component/Cart/StripePayment";
 import { ToastContainer } from "react-toastify";
 import PaypalPayment from "./component/Cart/PaypalPayment";
 import BottomNav from "./component/layout/Navbar/BottomNav";
+import { backend_api } from "./utils/backend_api";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -53,7 +54,7 @@ function App() {
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   async function getStripeApiKey() {
-    const { data } = await axios.get("/api/v1/stripeapikey");
+    const { data } = await axios.get(`${backend_api}/api/v1/stripeapikey`);
     console.log(data);
 
     setStripeApiKey(data.stripeApiKey);

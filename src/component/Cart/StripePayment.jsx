@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
+import { backend_api } from "../../utils/backend_api";
 import "./payment.css";
 const StripePayment = () => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
@@ -24,7 +25,7 @@ const StripePayment = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await axios.post("/api/v1/payment/stripe_process", {
+        const res = await axios.post(`${backend_api}/api/v1/payment/stripe_process`, {
           tokenId: stripeToken.id,
           amount: orderInfo.totalPrice * 100,
         });

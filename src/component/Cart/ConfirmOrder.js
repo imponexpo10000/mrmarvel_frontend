@@ -23,7 +23,7 @@ const ConfirmOrder = ({ history }) => {
 
   const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.pinCode}, ${shippingInfo.country}`;
 
-  const proceedToStripe= () => {
+  const proceedToStripe = () => {
     const data = {
       subtotal,
       shippingCharges,
@@ -36,8 +36,6 @@ const ConfirmOrder = ({ history }) => {
     history.push("/process/payment/stripe");
   };
 
-
-  
   const proceedToPaypal = () => {
     const data = {
       subtotal,

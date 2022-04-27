@@ -8,13 +8,14 @@ import axios from "axios";
 import Loader from "../layout/Loader/Loader";
 import { toast } from "react-toastify";
 import "./payment.css";
+import { backend_api } from "../../utils/backend_api";
 const PaypalPayment = () => {
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
   const { totalPrice } = JSON.parse(sessionStorage.getItem("orderInfo"));
   const loadPaypalScript = async () => {
     const {
       data: { paypalApiKey },
-    } = await axios.get("/api/v1/payment/paypalapikey");
+    } = await axios.get(`${backend_api}/api/v1/payment/paypalapikey`);
 
     paypalDispatch({
       type: "resetOptions",
