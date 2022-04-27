@@ -117,7 +117,10 @@ const Navbar = () => {
               <BiMenu />
             </div>
             <div className="logo">
-              <img src="./images/logo1.png" alt="" />
+              <Link to="/" >
+              <img src="./images/logo2__bg.jpg" alt="" />
+              </Link>
+       
             </div>
           </div>
           <div className="center">

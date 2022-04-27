@@ -39,13 +39,13 @@
 .navbar > .nav_center {
   position: sticky;
   top: 0;
-  height: 70px;
+  height: 90px;
   display: flex;
   align-items: center;
   border-bottom: 2px solid var(--primary);
-  background-color: var(--bg_secondary);
+  background-color: var(--white);
   /* background-color: var(--white); */
-  /* color: var(--dark); */
+  color: var(--dark);
 }
 .navbar > .nav_center > .container {
   display: flex;
@@ -61,7 +61,7 @@
 .navbar > .nav_center > .container > .left {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-evenly;
 }
 .navbar .nav_center > .container > .left .menuIcon {
   font-size: 28px;
@@ -80,8 +80,9 @@
 .navbar .nav_center > .container > .left .menuIcon:hover {
   background-color: var(--primary_dark);
 }
-.navbar .nav_center > .container > .left .logo img{
- height: 90px;
+.navbar .nav_center > .container > .left .logo img {
+  height: 83px;
+  width: auto;
 }
 .navbar .nav_center .container .center {
   display: flex;
@@ -89,7 +90,7 @@
 }
 .navbar .nav_center .container .center a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--dark);
   transition: all 0.2s;
   display: flex;
   align-items: center;
@@ -99,7 +100,6 @@
   font-weight: 500;
 }
 .navbar .nav_center .container .center > a:hover {
-
   color: var(--primary);
   border-bottom: 4px solid var(--primary);
 }
@@ -163,7 +163,7 @@
 .navbar > .nav_center > .container .right a {
   margin-left: 20px;
   font-size: 28px;
-  color: var(--text);
+  color: var(--dark);
 }
 .navbar > .nav_center > .container .right a:hover {
   color: var(--primary);
@@ -250,13 +250,12 @@
   padding: 20px 0;
   color: var(--primary);
 }
-@media screen and (min-width:600px){
-  .bottomNav{
+@media screen and (min-width: 600px) {
+  .bottomNav {
     display: none;
   }
-  
 }
-.bottomNav{
+.bottomNav {
   width: 100vw;
   position: fixed;
   bottom: 0;
@@ -266,7 +265,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.bottomNav .container{
+.bottomNav .container {
   display: flex;
   height: 100%;
   align-items: center;
@@ -274,7 +273,7 @@
   justify-content: space-between;
   padding: 0 20px;
 }
-.bottomNav .container a{
+.bottomNav .container a {
   font-size: 28px;
   color: var(--white);
 }
@@ -293,8 +292,12 @@
     align-items: center;
     font-size: 12px;
   }
+  .nav_center > .container .left .logo img {
+    height: 70px;
+  }
   .navbar .nav_center {
-    height: 55px;
+    height: 80px;
+    overflow: hidden;
   }
   .navbar .nav_center .container .center {
     display: none;
@@ -308,5 +311,5 @@
   }
 }
 .MuiTypography-root {
-  background-color: transparent!important;
+  background-color: transparent !important;
 }

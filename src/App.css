@@ -24,7 +24,8 @@ body {
   margin-right: -5px;
 }
 body::-webkit-scrollbar {
-  width: 8px;
+  width: 1rem;
+ 
 }
 
 body::-webkit-scrollbar-track {
@@ -33,14 +34,15 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--primary);
-  outline: 1px solid slategrey;
+  border-radius: 10px;
+  cursor: pointer;
 }
 a {
   text-decoration: none;
 }
 
 :root {
-  --primary: #bb0a1e;
+  --primary: #AC0404;
   --primary_dark: #9b0000;
   --primary_light: #f24a72;
   --secondary: #f8b400;
@@ -51,6 +53,7 @@ a {
   --gray: rgba(172, 172, 172, 0.933);
   --black: rgb(49, 49, 49);
   --text: #ffff;
+  --dark:rgb(43, 43, 43);
 }
 
 body {

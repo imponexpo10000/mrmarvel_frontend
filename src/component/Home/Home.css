@@ -51,6 +51,7 @@
   width: 95vw;
   max-width: 1400px;
   margin: 20px auto;
+  margin-top: 30px;
   border-radius: 10px;
   box-shadow: 1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 1px 10px -3px rgba(0, 0, 0, 0.75);
