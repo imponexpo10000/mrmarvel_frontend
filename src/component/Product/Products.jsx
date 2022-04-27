@@ -147,7 +147,7 @@ const Products = ({ match }) => {
                 <p className="medium-heading">Products</p>
               </div>
               <div className="items">
-                {products.length > 0 ? (
+                {products?.length > 0 ? (
                   products.map((product) => (
                     <ProductCard key={product._id} product={product} />
                   ))

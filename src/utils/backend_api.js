@@ -1,3 +1,3 @@
 
 
-export const backend_api="https://mrmarvel.herokuapp.com/"
+export const backend_api="https://mrmarvel.herokuapp.com"

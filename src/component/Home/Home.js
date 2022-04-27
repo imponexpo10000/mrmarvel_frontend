@@ -33,10 +33,10 @@ const Home = () => {
           <MetaData title="ECOMMERCE" />
           <HomeSlider />
 
-          <ProductsCard items={products} title="Featured Product" />
+          <ProductsCard to="/products" items={products} title="Featured Product" />
           {/* <ProductsCarousel items={products} title={"On Sale Products"} /> */}
 
-          <ProductsCard items={products} title="Best selling Products" />
+          <ProductsCard to="/products" items={products} title="Best selling Products" />
         </Fragment>
       )}
     </Fragment>

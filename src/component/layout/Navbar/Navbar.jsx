@@ -67,8 +67,8 @@ const Navbar = () => {
               {isAuthenticated && (
                 <div className="user">
                   <img src={user?.avatar.url} alt="" />
-                  <h4>{user.name}</h4>
-                  <h5>{user.email}</h5>
+                  <h4>{user?.name}</h4>
+                  <h5>{user?.email}</h5>
                 </div>
               )}
             </div>
@@ -96,7 +96,7 @@ const Navbar = () => {
                     <Link to={"/orders"}>
                       <CgNotes /> Orders
                     </Link>
-                    {user.role === "admin" && (
+                    {user?.role === "admin" && (
                       <Link to={"/admin/dashboard"}>
                         <MdDashboard /> Dashboard
                       </Link>
@@ -141,7 +141,7 @@ const Navbar = () => {
             </Link>
             <Link to="/account">
               {isAuthenticated ? (
-                <img className="avatar" src={user.avatar.url} />
+                <img className="avatar" src={user?.avatar?.url} />
               ) : (
                 <BiUserCircle />
               )}
