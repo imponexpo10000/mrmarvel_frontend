@@ -135,7 +135,7 @@ const Navbar = () => {
             <Link to="/cart">
               <div className="cartIcon">
                 <div>
-                  {" "}
+                  
                   <span>Cart</span> <span>${totalPrice}</span>{" "}
                 </div>{" "}
                 <span>{cartItems.length} </span>
