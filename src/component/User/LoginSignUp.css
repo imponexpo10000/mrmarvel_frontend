@@ -68,13 +68,14 @@
 }
 .loginForm > div > input,
 .signUpForm > div > input {
-  padding: 1vmax 4vmax;
-  padding-right: 1vmax;
+  padding: 10px 50px;
+  padding-right: 10px;
   width: 100%;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 4px;
-  font: 300 0.9vmax cursive;
+  font-size: 16px;
+  font-weight: 500;
   outline: none;
   height: 45px;
 }
@@ -83,7 +84,7 @@
 .signUpForm > div > svg {
   position: absolute;
   transform: translateX(1vmax);
-  font-size: 1.6vmax;
+  font-size: 26px;
   color: rgba(0, 0, 0, 0.623);
 }
 
@@ -131,7 +132,7 @@
   border: none;
   background-color: var(--primary);
   color: white;
-  font: 300 0.9vmax "Roboto";
+  font: 500 18px "Roboto";
   width: 100%;
   padding: 0.8vmax;
   height: 45px;
@@ -170,7 +171,7 @@
     height: 65vh;
   }
   .login_signUp_toggle {
-    height: 5vmax;
+    height: 50px;
   }
   .login_signUp_toggle > p {
     font-size: 16px;
@@ -178,18 +179,16 @@
 
   .loginForm,
   .signUpForm {
-    padding: 5vmax;
+    padding: 4vw;
   }
 
   .loginForm > div > input,
   .signUpForm > div > input {
-    padding: 2.5vmax 5vmax;
-    font: 300 1.7vmax cursive;
   }
 
   .loginForm > div > svg,
   .signUpForm > div > svg {
-    font-size: 2.8vmax;
+    font-size: 28px;
   }
 
   .loginForm > a {
@@ -197,7 +196,7 @@
   }
 
   #registerImage > img {
-    width: 8vmax;
+    width: 80px;
     border-radius: 100%;
   }
 
@@ -208,7 +207,8 @@
 
   .loginBtn,
   .signUpBtn {
-    font: 300 1.9vmax "Roboto";
+    font-size: 18px;
+    font-weight: 600;
     padding: 1.8vmax;
   }
 }

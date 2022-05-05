@@ -139,7 +139,7 @@
   transition: all 0.5s;
 }
 .category-link:hover {
-  color: tomato;
+  color: var(--primary);
 }
 .MuiSlider-root {
   color: var(--secondary) !important;
