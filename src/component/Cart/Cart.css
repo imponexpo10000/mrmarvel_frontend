@@ -52,6 +52,7 @@
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
   background-color: var(--bg_secondary);
+  align-items: center;
 }
 
 .cartInput {
@@ -161,6 +162,7 @@
   .cartInput {
 
     flex-direction: column;
+    margin: auto auto;
   }
 .cartInput > *{
   margin: 1px;

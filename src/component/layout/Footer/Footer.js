@@ -17,7 +17,7 @@ const Footer = () => {
         <img src="./images/logo2.png" />
         <p>High Quality is our first priority</p>
 
-        <p>Copyrights 2021 &copy; Mr Marvel</p>
+        <p>Copyrights 2022 &copy; Mr Marvel</p>
       </div>
 
       <div className="rightFooter">

@@ -10,7 +10,7 @@ import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
 import { Drawer } from "@material-ui/core";
-import { BsFilterRight } from "react-icons/bs";
+import { BsFilterRight, BsX } from "react-icons/bs";
 
 const categories = [
   "Laptop",
@@ -65,6 +65,7 @@ const Products = ({ match }) => {
 
   const applyFilter = () => {
     dispatch(getProduct(keyword, currentPage, price, category, ratings));
+    setdrawerOpen(false);
   };
 
   const filterBox = () => {
@@ -133,7 +134,12 @@ const Products = ({ match }) => {
         open={drawerOpen}
         onClose={() => setdrawerOpen(false)}
       >
-        {filterBox()}
+        <div className="drawer">
+          <div className="close" onClick={() => setdrawerOpen(false)}>
+            <BsX />
+          </div>
+          {filterBox()}
+        </div>
       </Drawer>
       {loading ? (
         <Loader />
