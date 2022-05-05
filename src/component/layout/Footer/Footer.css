@@ -1,5 +1,5 @@
 footer {
-  margin-top: 10vmax;
+
   padding: 2vmax;
   background-color: rgb(34, 33, 33);
   color: white;
@@ -36,10 +36,10 @@ footer {
   text-align: center;
 }
 
-.midFooter > h1 {
-  font-size: 4vmax;
-  font-family: "Roboto";
-  color: #eb4034;
+
+.midFooter img{
+  height: 170px;
+  width: auto;
 }
 .midFooter > p {
   max-width: 60%;
@@ -70,4 +70,12 @@ footer {
 
 .rightFooter > a:hover {
   color: #eb4034;
+}
+
+
+@media screen and (max-width:600px) {
+  footer{
+    margin-bottom: 50px;
+  }
+  
 }

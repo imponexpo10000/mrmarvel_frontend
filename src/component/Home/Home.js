@@ -10,6 +10,7 @@ import { useAlert } from "react-alert";
 import HomeSlider from "./HomeSlider";
 import ProductsCard from "./ProductsCard";
 import ProductsCarousel from "./ProductsCarousel";
+import Newsletter from "../layout/Newsletter/Newsletter";
 
 const Home = () => {
   const alert = useAlert();
@@ -37,6 +38,7 @@ const Home = () => {
           {/* <ProductsCarousel items={products} title={"On Sale Products"} /> */}
 
           <ProductsCard to="/products" items={products} title="Best selling Products" />
+          <Newsletter/>
         </Fragment>
       )}
     </Fragment>

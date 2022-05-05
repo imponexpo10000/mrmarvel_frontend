@@ -141,6 +141,22 @@ input[type="number"] {
   font-weight: 500;
 }
 
+
+@media screen and (max-width: 600px) {
+  .btn {
+    font-size: 14px;
+  }
+  .medium-heading {
+    font-size: 20px;
+  }
+  .large-heading {
+    font-size: 24px;
+  }
+  .small-heading {
+    font-size: 18px;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .btn {
     font-size: 14px;

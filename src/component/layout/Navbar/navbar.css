@@ -296,7 +296,7 @@
     justify-content: flex-start;
   }
   .nav_center > .container .left .logo img {
-    height: 60px!important;
+    height: 60px !important;
   }
   .navbar .nav_center {
     height: 80px;
@@ -312,16 +312,12 @@
   .navbar > .nav_center > .container .right a:last-child {
     display: none;
   }
-  
-  
- 
 }
 .MuiTypography-root {
   background-color: transparent !important;
 }
-@media screen  and (max-width:370px){
-  .navbar > .nav_center > .container .right .cartIcon > div{
+@media screen and (max-width: 370px) {
+  .navbar > .nav_center > .container .right .cartIcon > div {
     display: none;
   }
-  
 }

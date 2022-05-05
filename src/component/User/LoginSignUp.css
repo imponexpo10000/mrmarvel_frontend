@@ -52,7 +52,7 @@
   margin: auto;
   padding: 2vmax;
   justify-content: space-evenly;
-  height: 70%;
+  height: 90%;
   transition: all 0.5s;
 }
 
@@ -76,6 +76,7 @@
   border-radius: 4px;
   font: 300 0.9vmax cursive;
   outline: none;
+  height: 45px;
 }
 
 .loginForm > div > svg,
@@ -133,6 +134,7 @@
   font: 300 0.9vmax "Roboto";
   width: 100%;
   padding: 0.8vmax;
+  height: 45px;
   cursor: pointer;
   transition: all 0.5s;
   border-radius: 4px;
@@ -162,18 +164,16 @@
 }
 
 @media screen and (max-width: 600px) {
-  .LoginSignUpContainer {
-    background-color: white;
-  }
   .LoginSignUpBox {
-    width: 100vw;
-    height: 95vh;
+    margin-top: 80px;
+    width: 90vw;
+    height: 65vh;
   }
   .login_signUp_toggle {
     height: 5vmax;
   }
   .login_signUp_toggle > p {
-    font: 300 1.5vmax "Roboto";
+    font-size: 16px;
   }
 
   .loginForm,

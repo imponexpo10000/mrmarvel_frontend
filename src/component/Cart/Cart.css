@@ -159,17 +159,23 @@
   }
 
   .cartInput {
-    height: 20vmax;
-  }
 
+    flex-direction: column;
+  }
+.cartInput > *{
+  margin: 1px;
+}
   .cartInput > button {
-    padding: 1.5vmax;
+   height: 30px;
+   width: 30px;
   }
 
   .cartInput > input {
     width: 30px;
+    height: 30px;
     padding: 1.5vmax;
     font-size: 14px;
+    font-weight: 600;
   }
 
   .cartSubtotal {
