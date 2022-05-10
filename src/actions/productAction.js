@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../utils/backend_api";
 
 import {
   ALL_PRODUCT_FAIL,
@@ -34,7 +34,14 @@ import { backend_api } from "../utils/backend_api";
 
 // Get All Products
 export const getProduct =
-  (keyword = "", currentPage = 1, price = [0, 25000], category, ratings = 0) =>
+  (
+    keyword = "",
+    section = null,
+    currentPage = 1,
+    price = [0, 25000],
+    category,
+    ratings = 0
+  ) =>
   async (dispatch) => {
     try {
       dispatch({ type: ALL_PRODUCT_REQUEST });
@@ -137,7 +144,9 @@ export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
 
-    const { data } = await axios.delete(`${backend_api}/api/v1/admin/product/${id}`);
+    const { data } = await axios.delete(
+      `${backend_api}/api/v1/admin/product/${id}`
+    );
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
@@ -179,7 +188,11 @@ export const newReview = (reviewData) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
 
-    const { data } = await axios.put(`${backend_api}/api/v1/review`, reviewData, config);
+    const { data } = await axios.put(
+      `${backend_api}/api/v1/review`,
+      reviewData,
+      config
+    );
 
     dispatch({
       type: NEW_REVIEW_SUCCESS,

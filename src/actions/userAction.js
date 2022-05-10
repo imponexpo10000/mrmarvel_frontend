@@ -36,15 +36,19 @@ import {
   USER_DETAILS_FAIL,
   CLEAR_ERRORS,
 } from "../constants/userConstants";
-import axios from "axios";
+import axios from "../utils/backend_api";
 import { backend_api } from "../utils/backend_api";
+import COOk from "js-cookie";
 
 // Login
 export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
 
-    const config = { headers: { "Content-Type": "application/json" } };
+    const config = {
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+    };
 
     const { data } = await axios.post(
       `${backend_api}/api/v1/login`,
@@ -52,9 +56,14 @@ export const login = (email, password) => async (dispatch) => {
       config
     );
 
+    console.log(data);
+    COOk.set("token", data.token, { expires: 7 });
+
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });
   } catch (error) {
-    dispatch({ type: LOGIN_FAIL, payload: error.response.data.message });
+    console.log(error);
+
+    dispatch({ type: LOGIN_FAIL, payload: error?.response?.data.message });
   }
 };
 

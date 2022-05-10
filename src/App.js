@@ -21,9 +21,8 @@ import ResetPassword from "./component/User/ResetPassword";
 import Cart from "./component/Cart/Cart";
 import Shipping from "./component/Cart/Shipping";
 import ConfirmOrder from "./component/Cart/ConfirmOrder";
-import axios from "axios";
+import axios from "./utils/backend_api";
 // import Payment from "./component/Cart/Payment";
-
 
 import OrderSuccess from "./component/Cart/OrderSuccess";
 import MyOrders from "./component/Order/MyOrders";
@@ -115,7 +114,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/product/:id" component={ProductDetails} />
         <Route exact path="/products" component={Products} />
-        <Route path="/products/:keyword" component={Products} />
+        <Route path="/products/:section" component={Products} />
 
         <Route exact path="/search" component={Search} />
 

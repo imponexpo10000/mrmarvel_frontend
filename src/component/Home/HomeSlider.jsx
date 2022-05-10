@@ -3,24 +3,17 @@ import Carousel from "react-material-ui-carousel";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-const HomeSlider = () => {
+const HomeSlider = ({ sections }) => {
   return (
     <div className="homeslider">
       <div className="categories">
         <div className="heading">Categories</div>
         <div className="items">
-          <Link to="/products" >
-            <li>Categories</li>
-          </Link >
-          <Link to="/products">
-            <li>Categories</li>
-          </Link>
-          <Link to="/products">
-            <li>Categories</li>
-          </Link>
-          <Link to="/products">
-            <li>Categories</li>
-          </Link>
+          {sections.map((section) => (
+            <Link to={`products/${section._id}`}>
+              <li>{section.name}</li>
+            </Link>
+          ))}
         </div>
       </div>
       <div className="slides">

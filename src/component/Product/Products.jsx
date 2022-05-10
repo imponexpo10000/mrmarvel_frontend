@@ -44,6 +44,7 @@ const Products = ({ match }) => {
   } = useSelector((state) => state.products);
 
   const keyword = match.params.keyword;
+  const section = match.params.section;
 
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
@@ -60,11 +61,19 @@ const Products = ({ match }) => {
       dispatch(clearErrors());
     }
 
-    dispatch(getProduct(keyword, currentPage, price, category, ratings));
+    dispatch(
+      getProduct(keyword, section, currentPage, price, category, ratings)
+    );
   }, [dispatch, alert, error]);
 
+  useEffect(() => {
+    applyFilter();
+  }, [currentPage]);
+
   const applyFilter = () => {
-    dispatch(getProduct(keyword, currentPage, price, category, ratings));
+    dispatch(
+      getProduct(keyword, section, currentPage, price, category, ratings)
+    );
     setdrawerOpen(false);
   };
 

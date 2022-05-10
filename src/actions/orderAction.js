@@ -20,7 +20,7 @@ import {
   CLEAR_ERRORS,
 } from "../constants/orderConstants";
 
-import axios from "axios";
+import axios from "../utils/backend_api";
 import { backend_api } from "../utils/backend_api";
 
 // Create Order

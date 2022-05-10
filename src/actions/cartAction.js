@@ -3,7 +3,7 @@ import {
   REMOVE_CART_ITEM,
   SAVE_SHIPPING_INFO,
 } from "../constants/cartConstants";
-import axios from "axios";
+import axios from "../utils/backend_api";
 import { backend_api } from "../utils/backend_api";
 
 // Add to Cart
