@@ -46,6 +46,8 @@ import { ToastContainer } from "react-toastify";
 import PaypalPayment from "./component/Cart/PaypalPayment";
 import BottomNav from "./component/layout/Navbar/BottomNav";
 import { backend_api } from "./utils/backend_api";
+import Header from "./component/layout/Header/Header";
+import Home2 from "./component/Home/Home2";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -75,8 +77,9 @@ function App() {
 
   return (
     <Router>
-      {/* <Header /> */}
-      <Navbar />
+   
+      <Header/>
+   
       <BottomNav />
 
       <ToastContainer
@@ -111,7 +114,7 @@ function App() {
           component={PaypalPayment}
         />
 
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Home2} />
         <Route exact path="/product/:id" component={ProductDetails} />
         <Route exact path="/products" component={Products} />
         <Route path="/products/:section" component={Products} />

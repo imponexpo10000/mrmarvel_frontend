@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import ProductCard from "./ProductCard";
+import ProductCard2 from "./ProductCard2";
 const ProductsCard = ({ items, title, to, children }) => {
   return (
     <div className="productsCard">
@@ -15,7 +16,7 @@ const ProductsCard = ({ items, title, to, children }) => {
       <div className="products">
         {items && items.length > 0
           ? items.map((product) => (
-              <ProductCard key={product._id} product={product} />
+              <ProductCard2 key={product._id} product={product} />
             ))
           : children}
       </div>
