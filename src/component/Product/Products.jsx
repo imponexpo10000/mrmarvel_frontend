@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
 import { Drawer } from "@material-ui/core";
 import { BsFilterRight, BsX } from "react-icons/bs";
+import ProductCard2 from "../Home/ProductCard2";
 
 const categories = [
   "Laptop",
@@ -158,13 +159,24 @@ const Products = ({ match }) => {
           <div className="productsContainer">
             <div className="filter">{filterBox()}</div>
             <div className="products">
-              <div className="header">
+              <div className="products_header">
                 <p className="medium-heading">Products</p>
+                <div className="mb_filter">
+                  <button
+                    className="filter"
+                    onClick={() => setdrawerOpen(!drawerOpen)}
+                  >
+                    <span> Filter</span>
+                    <span>
+                      <BsFilterRight />
+                    </span>
+                  </button>
+                </div>
               </div>
               <div className="items">
                 {products?.length > 0 ? (
                   products.map((product) => (
-                    <ProductCard key={product._id} product={product} />
+                    <ProductCard2 key={product._id} product={product} />
                   ))
                 ) : (
                   <h2> No Products Found :)</h2>
@@ -190,18 +202,6 @@ const Products = ({ match }) => {
                 </div>
               )}
             </div>
-          </div>
-          <div className="mb_filter">
-            <span> Products</span>
-            <button
-              className="filter"
-              onClick={() => setdrawerOpen(!drawerOpen)}
-            >
-              <span> Filter</span>
-              <span>
-                <BsFilterRight />
-              </span>
-            </button>
           </div>
         </Fragment>
       )}

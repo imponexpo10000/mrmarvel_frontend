@@ -1,12 +1,14 @@
 import React, { Fragment, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import MetaData from "../layout/MetaData";
 import Loader from "../layout/Loader/Loader";
 import { Link } from "react-router-dom";
+import {logout} from '../../actions/userAction'
 import "./Profile.css";
 
 const Profile = ({ history }) => {
   const { user, loading, isAuthenticated } = useSelector((state) => state.user);
+  const dispatch=useDispatch()
 
   useEffect(() => {
     if (isAuthenticated === false) {
@@ -24,7 +26,9 @@ const Profile = ({ history }) => {
             <div>
               <h1>My Profile</h1>
               <img src={user.avatar.url} alt={user.name} />
+
               <Link to="/me/update">Edit Profile</Link>
+              <Link to="/" onClick={()=>dispatch(logout())} >Logout</Link>
             </div>
             <div>
               <div>
@@ -42,6 +46,8 @@ const Profile = ({ history }) => {
 
               <div>
                 <Link to="/orders">My Orders</Link>
+               
+                {user.role == "admin" &&  <Link to="/admin/dashboard">Dashboard</Link>}
                 <Link to="/password/update">Change Password</Link>
               </div>
             </div>

@@ -23,7 +23,7 @@ export const getCategories = () => async (dispatch) => {
       config
     );
 
-    dispatch({ type: GET_CATEGORY_SUCCESS, payload: data.user });
+    dispatch({ type: GET_CATEGORY_SUCCESS, payload: data.categories });
   } catch (error) {
     console.log(error);
 
@@ -41,6 +41,25 @@ export const getSections = () => async (dispatch) => {
     const { data } = await axios.get(`${backend_api}/api/v1/section`);
 
     dispatch({ type: GET_SECTIONS_SUCCESS, payload: data.sections });
+  } catch (error) {
+    console.log(error);
+
+    dispatch({
+      type: GET_SECTIONS_FAILURE,
+      payload: error?.response?.data.message,
+    });
+  }
+};
+
+export const getSectionscategories = () => async (dispatch) => {
+  try {
+    dispatch({ type: GET_SECTIONS_REQUEST });
+
+    const { data } = await axios.get(
+      `${backend_api}/api/v1/sections_categories`
+    );
+
+    dispatch({ type: GET_SECTIONS_SUCCESS, payload: data.sectionsCategories });
   } catch (error) {
     console.log(error);
 

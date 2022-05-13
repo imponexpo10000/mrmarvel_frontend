@@ -1,12 +1,14 @@
 import {
   GET_CATEGORY_REQUEST,
   GET_CATEGORY_SUCCESS,
+  GET_SECTIONS_CATEGORIES_SUCCESS,
   GET_SECTIONS_SUCCESS,
 } from "../constants/categoryConstants";
 
 const initState = {
   categories: [],
-  sections:[],
+  sections: [],
+  sectionsCategories: [],
   loading: false,
 };
 export const categoryreducer = (state = initState, action) => {
@@ -20,12 +22,18 @@ export const categoryreducer = (state = initState, action) => {
       return (state = {
         ...state,
         loading: false,
+        categories: action.payload,
       });
-      case GET_SECTIONS_SUCCESS:
-        return state={
-          ...state,
-          sections:action.payload
-        }
+    case GET_SECTIONS_SUCCESS:
+      return (state = {
+        ...state,
+        sections: action.payload,
+      });
+    case GET_SECTIONS_CATEGORIES_SUCCESS:
+      return (state = {
+        ...state,
+        sectionsCategories: action.payload,
+      });
 
     default:
       return state;

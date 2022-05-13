@@ -12,17 +12,20 @@ import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
+import { getSections } from "../../actions/categoryAction";
 
 const NewProduct = ({ history }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
   const { loading, error, success } = useSelector((state) => state.newProduct);
+  const { sections } = useSelector((state) => state.categories);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
+  const [section, setSection] = useState(null);
   const [Stock, setStock] = useState(0);
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
@@ -49,6 +52,10 @@ const NewProduct = ({ history }) => {
       dispatch({ type: NEW_PRODUCT_RESET });
     }
   }, [dispatch, alert, error, history, success]);
+
+  useEffect(() => {
+    dispatch(getSections());
+  }, []);
 
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
@@ -130,6 +137,18 @@ const NewProduct = ({ history }) => {
                 cols="30"
                 rows="1"
               ></textarea>
+            </div>
+
+            <div>
+              <AccountTreeIcon />
+              <select onChange={(e) => setSection(e.target.value)}>
+                <option value="">Select Section</option>
+                {sections.map((section) => (
+                  <option key={section._id} value={section._id}>
+                    {section.name}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div>

@@ -1,16 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getCategories, getSections } from "../../../actions/categoryAction";
 import "./Header.css";
 
 const Header = () => {
-  const { sections } = useSelector((state) => state.categories);
+  const { sections, categories } = useSelector((state) => state.categories);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCategories());
+    dispatch(getSections());
+  }, []);
+
+  const menus = (sectionID) => {
+    const _categories = categories.filter((cat) => cat.section == sectionID);
+
+    return (
+      <div className="megaMenu">
+        <div className="categories">
+          <h3>Categories</h3>
+          {_categories.map((cat, index) => (
+            <Link key={index}>{cat.name}</Link>
+          ))}
+        </div>
+      </div>
+    );
+  };
   return (
     <div className="header">
       <div className="top">
-        <div className="left">qrqrq</div>
+        <div className="left">
+          <div className="contacts">
+            <div className="contact">
+              <span>Call US</span> <a href="tel:0130551151">+880 143154151</a>
+            </div>
+            <div className="contact">
+              <span>Email</span>
+              <a href="mailto:contact@fibz.com">contact@fibz.com</a>
+            </div>
+          </div>
+        </div>
         <div className="center">
           <Link to={"/"} className="logo">
             <img
@@ -36,12 +69,11 @@ const Header = () => {
           {sections.map((section) => (
             <Link to={"/"}>
               <span>{section.name}</span>
-              <div className="megaMenu"></div>
+              {menus(section._id)}
             </Link>
           ))}
           <Link to={"/"}>
             <span>Home</span>
-            <div className="megaMenu"></div>
           </Link>
           <Link to={"/products"}>Shop</Link>
           <Link to={"/about"}>About Us</Link>
